@@ -5,3 +5,9 @@
 
 # 4d-tips-get-pdf-page-count
 PDFファイルのページ数を取得する例題
+
+```4d
+var $PDF : 4D.File
+$PDF:=File("/DATA/sample.pdf")
+$pages:=pdf_get_pages($PDF)
+```
