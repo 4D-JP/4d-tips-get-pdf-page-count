@@ -30,13 +30,7 @@ If ($PDF#Null:C1517)
 		LAUNCH EXTERNAL PROCESS:C811($cmd; $stdIn; $stdOut; $stdErr)
 		
 		var $json : Object
-		Case of 
-			: (Is macOS:C1572)
-				$json:=JSON Parse:C1218(Convert to text:C1012($stdOut; "utf-8"); Is object:K8:27)
-			: (Is Windows:C1573)
-				$json:=JSON Parse:C1218(Convert to text:C1012($stdOut; "utf-16le"); Is object:K8:27)
-		End case 
-		
+		$json:=JSON Parse:C1218(Convert to text:C1012($stdOut; "utf-8"); Is object:K8:27)
 		$pageCount:=$json.infos.sum("pageCount")
 		
 	End if 
